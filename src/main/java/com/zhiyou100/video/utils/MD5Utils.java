@@ -9,8 +9,9 @@ import org.springframework.util.DigestUtils;
 * @date 2017年8月27日  下午2:53:39
 *    
 */ 
-public class MD5Utils {
 
+public class MD5Utils {
+    //加密
 	public static String getMD5(String str){
 		return DigestUtils.md5DigestAsHex(str.getBytes());
 	}

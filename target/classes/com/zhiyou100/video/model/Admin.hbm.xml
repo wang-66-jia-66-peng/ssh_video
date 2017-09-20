@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <!-- 配置package可以省去全类名的包名 -->
+    <hibernate-mapping    package="com.zhiyou100.video.model">
+           <class  name="Admin"  table="admin"    >
+            <id  name="id"   column="id">
+              <generator class="native"></generator>
+            </id>
+            <property name="loginName"   column="login_name"></property>
+            <property name="loginPwd"  column="login_pwd" ></property>
+           </class>
+    </hibernate-mapping>

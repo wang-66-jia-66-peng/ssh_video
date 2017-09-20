@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	 <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	 <constant name="struts.action.extension" value="action,,"></constant>
+	 <constant name="struts.devMode" value="true"></constant>
+	  <package name="FrontCourse"   namespace="/front/course"     extends="struts-default"  >
+	       <action name="course_index"  class="frontCourseAction"    method="index">
+	            <result>/WEB-INF/view/front/course/index.jsp</result>
+	       </action>
+	       <action name="video_show"  class="frontCourseAction"    method="show">
+	            <result>/WEB-INF/view/front/video/index.jsp</result>
+	       </action>
+	       <action name="video_videoData"  class="frontCourseAction"    method="videoData">
+	            <result>/WEB-INF/view/front/video/content.jsp</result>
+	       </action>
+	       <action name="video_state"  class="frontCourseAction"    method="state">
+	            <result>/WEB-INF/view/front/video/content.jsp</result>
+	       </action>
+	      
+	  </package> 
+	</struts> 

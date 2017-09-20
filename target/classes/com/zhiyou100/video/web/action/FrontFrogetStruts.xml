@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	 <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	 <constant name="struts.action.extension" value="action,,"></constant>
+	 <constant name="struts.devMode" value="true"></constant>
+	 <package name="frontFrogetUser"   namespace="/front/forget"     extends="struts-default">
+	      <action name="forget_pwd"  class="frontFrogetAction"   method="pwd">
+	         <result >/WEB-INF/view/front/user/forget_pwd.jsp</result>
+	      </action>
+	      <action name="forget_pwd02"  class="frontFrogetAction"   method="pwd02">
+	         <result >/WEB-INF/view/front/user/reset_pwd.jsp</result>
+	          <result name="fail">/WEB-INF/view/front/user/forget_pwd.jsp</result>
+	      </action>
+	      <action name="forget_resetpwd"  class="frontFrogetAction"   method="resetpwd">
+	         <result >/front/index.jsp</result>
+	      </action>
+	
+	
+	
+	</package> 
+	
+	 <package name="FrontSendEmail"   namespace="/front/send"     extends="json-default"  >
+	   <action name="send_email"  class="frontFrogetAction"   method="email">
+	         <result type="json">
+	             <param name="root">msg</param>
+              </result>
+	   </action>
+	</package>
+	</struts> 

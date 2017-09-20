@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	 <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	 <constant name="struts.action.extension" value="action,,"></constant>
+	 <constant name="struts.devMode" value="true"></constant>
+	  <package name="AdminnSpeaker"   namespace="/adminSpeaker"     extends="struts-default"  >
+	      <action name="speaker_speakerList"  class="adminSpeakerAction"   method="speakerList">
+	         <result >/WEB-INF/view/speaker/speakerList.jsp</result>
+	      </action>
+	      <action name="speaker_addSpeaker"  class="adminSpeakerAction"   method="addSpeaker">
+	         <result >/WEB-INF/view/speaker/addSpeaker.jsp</result>
+	      </action>
+	     
+	       <action name="speaker_addSpeakerTwo"  class="adminSpeakerAction"   method="addSpeakerTwo">
+	         <result type="chain">
+	            <param name="actionName">speaker_speakerList</param>
+	            <param name="namespace">/adminSpeaker</param>
+	         </result>
+	      </action>
+	       <action name="speaker_deleteSpeaker"  class="adminSpeakerAction"   method="deleteSpeaker">
+	         <result type="chain">
+	            <param name="actionName">speaker_speakerList</param>
+	            <param name="namespace">/adminSpeaker</param>
+	         </result>
+	       </action>
+	       <action name="speaker_updateSpeaker01"  class="adminSpeakerAction"   method="updateSpeaker01">
+	                <result >/WEB-INF/view/speaker/updateSpeaker.jsp</result>
+	       </action> 
+	       <action name="speaker_updateSpeaker02"  class="adminSpeakerAction"   method="updateSpeaker02">
+	            <result type="chain">
+	            <param name="actionName">speaker_speakerList</param>
+	            <param name="namespace">/adminSpeaker</param>
+	         </result>
+	       </action> 
+	   
+	  </package> 
+	</struts> 

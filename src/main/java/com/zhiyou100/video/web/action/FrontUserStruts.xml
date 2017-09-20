@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	 <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	 <constant name="struts.action.extension" value="action,,"></constant>
+	 <constant name="struts.devMode" value="true"></constant>
+	 <package name="FrontUser"   namespace="/front/user"     extends="json-default"  >
+	   <action name="user_login"  class="com.zhiyou100.video.web.action.FrontUserAction"   method="login">
+	         <result type="json">
+	             <param name="root">msg</param>
+              </result>
+	   </action>
+	   <action name="user_resgist"  class="com.zhiyou100.video.web.action.FrontUserAction"   method="resgist">
+	         <result type="json">
+	             <param name="root">msg</param>
+              </result>
+	   </action>
+	
+	   <action name="user_oldPassword"  class="com.zhiyou100.video.web.action.FrontUserAction"   method="oldPassword">
+	         <result type="json">
+	             <param name="root">msg</param>
+              </result>
+	   </action>
+	
+	
+	
+	</package> 
+	</struts> 

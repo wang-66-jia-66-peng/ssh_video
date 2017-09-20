@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <!-- 配置package可以省去全类名的包名 -->
+   <hibernate-mapping    package="com.zhiyou100.video.model">
+           <class  name="Speaker"  table="speaker"    >
+            <id  name="id"   column="id">
+              <generator class="native"></generator>
+            </id>
+            <property name="speakerName"   column="speaker_name"></property>
+            <property name="speakerJob"  column="speaker_job" ></property>
+            <property name="speakerHeadUrl"  column="speaker_head_url" ></property>
+            <property name="speakerDescr"  column="speaker_descr" ></property>
+            <property name="insertTime"  column="insert_time" ></property>
+            <property name="updateTime"  column="update_time" ></property>
+            
+             <set name="videoSet"  inverse="true">
+                    <key column="speaker_id"></key>
+                 <one-to-many class="Video"/>
+             </set>  
+   
+           </class>
+    </hibernate-mapping>  

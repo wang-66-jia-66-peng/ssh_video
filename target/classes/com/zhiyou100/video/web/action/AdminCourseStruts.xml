@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	 <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	 <constant name="struts.action.extension" value="action,,"></constant>
+	 <constant name="struts.devMode" value="true"></constant>
+	  <package name="AdminnCourse"   namespace="/adminCourse"     extends="struts-default"  >
+	      <action name="course_courseList"  class="adminCourseAction"   method="courseList">
+	         <result >/WEB-INF/view/course/courseList.jsp</result>
+	      </action>
+	    
+	      <action name="course_addCourse01"  class="adminCourseAction"   method="addCourse01">
+	         <result >/WEB-INF/view/course/addCourse.jsp</result>
+	      </action>
+	      
+	      <action name="course_addCourse02"  class="adminCourseAction"   method="addCourse02">
+	         <result type="chain">
+	            <param name="actionName">course_courseList</param>
+	            <param name="namespace">/adminCourse</param>
+	         </result>
+	      </action>
+	      
+	      <action name="course_deleteCourse"  class="adminCourseAction"   method="deleteCourse">
+	         <result type="chain">
+	            <param name="actionName">course_courseList</param>
+	            <param name="namespace">/adminCourse</param>
+	         </result>
+	      </action>
+	       
+	       <action name="course_updateCourse01"  class="adminCourseAction"   method="updateCourse01">
+	         <result >/WEB-INF/view/course/updateCourse.jsp</result>
+	       </action>
+	        <action name="course_updateCourse02"  class="adminCourseAction"   method="updateCourse02">
+	         <result type="chain">
+	            <param name="actionName">course_courseList</param>
+	            <param name="namespace">/adminCourse</param>
+	         </result>
+	      </action>
+	   
+	   
+	  </package> 
+	</struts> 

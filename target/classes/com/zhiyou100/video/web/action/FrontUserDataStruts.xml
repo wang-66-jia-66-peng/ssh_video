@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	 <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	 <constant name="struts.action.extension" value="action,,"></constant>
+	 <constant name="struts.devMode" value="true"></constant>
+	 <package name="FrontDataUser"   namespace="/front/personal"     extends="struts-default"  >
+	      <action name="personal_index"  class="frontUserDataAction"   method="index">
+	         <result >/WEB-INF/view/front/user/index.jsp</result>
+	      </action>
+	      <action name="personal_profile"  class="frontUserDataAction"  method="profile">
+	         <result >/WEB-INF/view/front/user/profile.jsp</result>
+	      </action>
+	      <action name="personal_profile02"  class="frontUserDataAction"  method="profile02">
+	         <result  type="chain">
+	              <param name="actionName">personal_index</param>
+	               <param name="namespace">/front/personal</param>
+	         </result>
+	      </action>
+	     <action name="personal_avatar"  class="frontUserDataAction"  method="avatar">
+	         <result >/WEB-INF/view/front/user/avatar.jsp</result>
+	      </action>
+	     <action name="personal_avatar02"  class="frontUserDataAction"  method="avatar02">
+	       <result  type="chain">
+	              <param name="actionName">personal_index</param>
+	               <param name="namespace">/front/personal</param>
+	         </result>
+	      </action>
+	     <action name="personal_password"  class="frontUserDataAction"  method="password">
+	         <result >/WEB-INF/view/front/user/password.jsp</result>
+	      </action>
+	     <action name="personal_logout"  class="frontUserDataAction"  method="logout">
+	         <result  type="redirect">/front/index.jsp</result>
+	      </action>
+	     <action name="personal_home"  class="frontUserDataAction"  method="home">
+	         <result type="redirect">/front/index.jsp</result>
+	      </action>
+	
+	
+	
+	
+	</package> 
+	</struts> 

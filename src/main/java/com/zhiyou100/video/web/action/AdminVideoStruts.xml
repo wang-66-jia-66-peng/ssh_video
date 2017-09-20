@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	 <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	 <constant name="struts.action.extension" value="action,,"></constant>
+	 <constant name="struts.devMode" value="true"></constant>
+	 <package name="AdminnVideo"   namespace="/adminVideo"     extends="struts-default"  >
+	   <action name="video_*"  class="adminVideoAction"   method="{1}">
+	     <result >/WEB-INF/view/video/videoList.jsp</result>
+	     <result name="fail" type="redirect">/index.jsp</result>
+	   </action>
+	   <action name="video_addVideo01"  class="adminVideoAction"   method="addVideo01">
+	     <result >/WEB-INF/view/video/addVideo.jsp</result>
+	   </action>
+	   <action name="video_addVideo02"  class="adminVideoAction"   method="addVideo02">
+	    <result type="chain">
+	       <param name="actionName">video_videoList</param>
+	       <param name="namespace">/adminVideo</param>
+	     </result>
+	   </action>
+	   <action name="video_deleteVideo"  class="adminVideoAction"   method="deleteVideo">
+	    <result type="chain">
+	       <param name="actionName">video_videoList</param>
+	       <param name="namespace">/adminVideo</param>
+	     </result>
+	   </action>
+	   <action name="video_updateVideo01"  class="adminVideoAction"   method="updateVideo01">
+	          <result >/WEB-INF/view/video/updateVideo.jsp</result>
+	   </action>
+	   <action name="video_updateVideo02"  class="adminVideoAction"   method="updateVideo02">
+	      <result type="chain">
+	       <param name="actionName">video_videoList</param>
+	       <param name="namespace">/adminVideo</param>
+	     </result>
+	   </action>
+	   <action name="video_deteleVideoLarge"  class="adminVideoAction"  method="deteleVideoLarge">
+	    <result type="chain">
+	        <param name="actionName">video_videoList</param>
+	        <param name="namespace">/adminVideo</param>
+	     </result>
+	   </action>
+	   
+	</package> 
+	</struts> 

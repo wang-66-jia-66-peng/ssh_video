@@ -17,7 +17,7 @@ import javax.mail.internet.MimeMessage;
 *    
 */ 
 public class MailUtil {
-	//要修改为自己的qq邮箱账号
+	//修改为自己的qq邮箱账号
 	private static String myEmailAccount = "1293358963@qq.com";
 	//修改为自己的邮箱授权码
 	private static String myEmailPassword = "dsxrppeqgusofgbg";
